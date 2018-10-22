@@ -1,0 +1,63 @@
+server:
+  port: 8092
+  servlet:
+    session:
+      # session超时时间，单位为秒
+      timeout: 3600
+
+spring:
+  datasource:
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      connection-test-query: select 1
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      pool-name: HFSHikariCP
+      mysql:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/heisai_admin?useSSL=false&useUnicode=true&characterEncoding=utf8
+        username: heisai
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+      oracle:
+        jdbc-url: jdbc:oracle:thin:@192.168.0.121:1521:XE
+        username: heisai
+        password: 123456
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+
+  thymeleaf:
+    cache: false
+  aop:
+    proxy-target-class: true
+
+  # 时间类型格式化，时区为 +8区
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+info:
+  app:
+    name: "Heisai-FaceStore"
+    description: "spring boot & spring security 权限管理系统"
+    version: "0.2.0"
+    spring-boot-version: "2.0.5.RELEASE"
+
+# mybatis配置
+#mybatis:
+#  mapper-locations: classpath:mapper/mysql/*.xml
+#  configuration:
+#    jdbc-type-for-null: null
+#  type-aliases-package: com.edgardeng.mysql.domain
+
+# 通用 mapper插件配置
+#mapper:
+#  mappers: cn.heisai.common.config.MyMapper
+#  not-empty: false
+#  identity: mysql
+
+# pagehelper插件配置（分页）
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

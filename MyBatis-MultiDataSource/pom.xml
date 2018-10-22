@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>SBFirst</groupId>
-	<artifactId>sbfirst</artifactId>
+	<groupId>com.edgardeng</groupId>
+	<artifactId>mutildata</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>sbfirst</name>
+	<name>mutildata</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -35,6 +35,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- jdbc -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
@@ -47,8 +48,8 @@
 		</dependency>
 		<!-- hikaricp -->
 		<!--<dependency>-->
-		<!--<groupId>com.zaxxer</groupId>-->
-		<!--<artifactId>HikariCP</artifactId>-->
+			<!--<groupId>com.zaxxer</groupId>-->
+			<!--<artifactId>HikariCP</artifactId>-->
 		<!--</dependency>-->
 		<!-- mysql -->
 		<dependency>

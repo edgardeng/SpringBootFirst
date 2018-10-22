@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edgardeng.mysql.dao.UserMapper">
+    <resultMap id="user" type="com.edgardeng.mysql.domain.User">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="DECIMAL" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="status" jdbcType="DECIMAL" property="status"/>
+        <result column="gender" jdbcType="DECIMAL" property="gender"/>
+        <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="created_at" jdbcType="TIMESTAMP" property="createdAt"/>
+        <result column="created_by" jdbcType="DECIMAL" property="createdBy"/>
+        <result column="created_from" jdbcType="VARCHAR" property="createdFrom"/>
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt"/>
+        <result column="updated_by" jdbcType="DECIMAL" property="updatedBy"/>
+        <result column="updated_from" jdbcType="VARCHAR" property="updatedFom"/>
+    </resultMap>
+
+    <select id="findUserWithId" resultMap="user">
+        select u.id,u.username,u.name,u.avatar,u.email,u.phone,u.status,u.gender,u.created_at createdAt
+        from hs_user u
+        where u.id = #{userId}
+    </select>
+
+</mapper>
